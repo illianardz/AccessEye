@@ -1,5 +1,5 @@
 # Accessible Vehicle Locator
-Real-time accessible vehicle detection system using the YOLOv7 deep learning model. Our goal was to identify vehicles that display the International Symbol of Access in video streams.
+Accessible vehicle detection system using the YOLOv7 deep learning model. Our goal was to identify vehicles that display the International Symbol of Access in video streams.
 
 ## Key Features
 - **Real-Time Detection:** Identifies the International Symbol of Access on vehicles in real-time video feeds and images.
