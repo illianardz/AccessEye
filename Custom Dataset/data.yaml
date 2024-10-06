@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['license_plate', 'symbol_of_access', 'vehicle']
+
+roboflow:
+  workspace: hacksmu-nhjks
+  project: dataset-hacksmu
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/hacksmu-nhjks/dataset-hacksmu/dataset/1
