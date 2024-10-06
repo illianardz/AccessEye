@@ -1,10 +1,66 @@
 # Training YOLOv7 on Custom Data
 We used Googla colab to train our model with custom data and test it out.
-
 ## Install Dependencies
-
 ```python
 !git clone https://github.com/WongKinYiu/yolov7
 %cd yolov7
 !pip install -r requirements.txt
+```
+## Download Custom Data
+We downloaded our custom dataset using the YOLOv7 PyTorch export. 
+```python
+!pip install roboflow
+%cd yolov7
+
+from roboflow import Roboflow
+rf = Roboflow(api_key="Zi2LVnTfSriJOC0z7Iz9")
+project = rf.workspace("hacksmu-nhjks").project("dataset-hacksmu")
+version = project.version(1)
+dataset = version.download("yolov7")
+```
+## Custom Training
+Due to limited amount of time, our team was only able to run 1 epoch. However, to increase efficiency in the future, we would run from 100-200. This means our trained model is not as accurate as we would have liked.
+```python
+%cd /content/yolov7
+!wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt
+```
+```python
+%cd /content/yolov7
+!python train.py --batch 16 --cfg cfg/training/yolov7.yaml --epochs 1 --data {dataset.location}/data.yaml --weights 'yolov7_training.pt' --device 0
+```
+![image](https://github.com/user-attachments/assets/334a5fa5-d39d-40d6-92a2-979d0e8c2f54)
+## Evaluation
+To test **images**:
+```python
+!python detect.py --weights runs/train/exp/weights/best.pt --conf 0.1 --source {dataset.location}/test/images
+
+import glob
+from IPython.display import Image, display
+
+i = 0
+limit = 10000 # max images to print
+for imageName in glob.glob('/content/yolov7/runs/detect/exp2/*.jpg'): #assuming JPG
+    if i < limit:
+      display(Image(filename=imageName))
+      print("\n")
+    i = i + 1
+```
+Here are some of the displayed inferences on test images:
+
+To test **videos**:
+``` python
+import os
+from google.colab import files
+
+uploaded = files.upload()
+
+target_directory = '/content/yolov7/dataset/test/videos'
+os.makedirs(target_directory, exist_ok=True)
+
+for filename in uploaded.keys():
+  os.rename(filename, os.path.join(target_directory, filename))
+
+video_path = '/content/yolov7/dataset/test/videos/test_video.mp4'
+
+!python detect.py --weights runs/train/exp/weights/best.pt --conf 0.1 --source /content/yolov7/dataset/test/videos
 ```
