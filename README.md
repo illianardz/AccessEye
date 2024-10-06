@@ -1,6 +1,7 @@
 # accessible_vehicle_locator
 Real-time computer vision algorithm designed to identify accessible vehicles in video streams by detecting the International Symbol of Access. This project utilizes machine learning techniques to analyze video frames at 30 frames per second, ensuring real-time performance without dropping frames.
 
+
 Key Features:
 
 Real-Time Detection: Capable of processing standard video streams in real-time.
