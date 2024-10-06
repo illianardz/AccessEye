@@ -1,4 +1,4 @@
-# Training YOLOv7 on Custom Data
+# 2. Training YOLOv7 on Custom Data
 We used Googla colab to train our model with custom data and test it out.
 ## Install Dependencies
 ```python
@@ -46,6 +46,8 @@ for imageName in glob.glob('/content/yolov7/runs/detect/exp2/*.jpg'): #assuming 
     i = i + 1
 ```
 Here are some of the displayed inferences on test images:
+
+![Untitled presentation](https://github.com/user-attachments/assets/383a5d0c-1f50-429f-97b0-ca47fb8be5fa)
 
 To test **videos**:
 ``` python
