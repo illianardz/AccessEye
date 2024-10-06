@@ -1,17 +1,14 @@
 # Accessible Vehicle Locator
-Real-time computer vision algorithm designed to identify accessible vehicles in video streams by detecting the International Symbol of Access. This project utilizes machine learning techniques to analyze video frames at 30 frames per second, ensuring real-time performance without dropping frames.
+Real-time accessible vehicle detection system using the YOLOv7 deep learning model. Our goal is to identify vehicles that display the International Symbol of Access in video streams.
 
 ## Key Features
-- Real-Time Detection: Capable of processing standard video streams in real-time.
-- Accessibility Focus: Specifically searches for the International Symbol of Access on license plates and vehicle windows.
-- Bounding Box Output: Provides precise bounding box coordinates for each detected vehicle along with confidence scores.
-- Open Data Compliance: Leverages open datasets for training and validation, adhering to ethical guidelines and ensuring broad usability.
-- Non-Invasive: Designed to detect vehicles without inferring any personal information about individuals.
-- Use Case: Ideal for use in parking management systems, traffic monitoring solutions, and accessibility compliance in urban environments.
+- **Real-Time Detection:** Identifies the International Symbol of Access on vehicles in real-time video feeds and images.
+- **High Accuracy:** Utilizes the robust YOLOv7 model fine-tuned on a custom dataset.
+- **Easy Deployment:** Model weights and configuration are prepared for quick deployment in diverse environments.
 
 ## Use Cases
 
-This algorithm is particularly useful in:
+This algorithm can be useful for:
 - Parking management systems
 - Traffic monitoring solutions
 - Ensuring accessibility compliance in urban settings
