@@ -1,4 +1,4 @@
-# Project Setup
+# AccessEye Project Setup
 
 ## Gathering Data and Choosing a Model Architecture
 To build a dataset, we retrieved exisiting datasets featuring images of vehicles, license plates, and the International Symbol of Access. We then annotated the images to classify them into the following classes:
