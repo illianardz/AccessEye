@@ -12,7 +12,6 @@ Accessible vehicle detection system using advanced computer vision techniques to
 - **YOLOv7:** Chosen for its speed and accuracy in object detection tasks.
 
 ## Use Cases
-This algorithm can be useful for:
 - Parking management systems
 - Traffic monitoring solutions
 - Ensuring accessibility compliance in urban settings
