@@ -39,16 +39,14 @@ version = project.version(1)
 dataset = version.download("yolov7")
 ```
 ## Custom Training
-**Initial Checks:** Conducted a preliminary training run for 1 epoch to validate the setup before extending the process to a full training regimen.
 ```python
 %cd /content/yolov7
 !wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt
 ```
 ```python
 %cd /content/yolov7
-!python train.py --batch 16 --cfg cfg/training/yolov7.yaml --epochs 1 --data {dataset.location}/data.yaml --weights 'yolov7_training.pt' --device 0
+!python train.py --batch 16 --cfg cfg/training/yolov7.yaml --epochs 100 --data {dataset.location}/data.yaml --weights 'yolov7_training.pt' --device 0
 ```
-![image](https://github.com/user-attachments/assets/334a5fa5-d39d-40d6-92a2-979d0e8c2f54)
 ## Evaluation
 Once the model was completed, we assessed the model’s accuracy and efficiency on a set of test images to ensure reliable real-time detection.
 ```python
